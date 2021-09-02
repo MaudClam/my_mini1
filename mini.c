@@ -65,8 +65,7 @@ int main(int argc, const char * argv[])
 	while ((scan = fscanf(file, "%c %f %f %f %c\n", \
 		&cr[c.figs].t, &cr[c.figs].x, &cr[c.figs].y, &cr[c.figs].r, &cr[c.figs].f)) == 5)
 	{
-		if ((cr[c.figs].t != 'C' && cr[c.figs].t != 'c') || \
-			cr[c.figs].x < 0.00000000 || cr[c.figs].y < 0.00000000 || cr[c.figs].r < 0.00000000)
+		if ((cr[c.figs].t != 'C' && cr[c.figs].t != 'c') || cr[c.figs].r <= 0.00000000)
 		{
 			write(1, "Error: Operation file corrupted\n", 32);
 			fclose(file);
